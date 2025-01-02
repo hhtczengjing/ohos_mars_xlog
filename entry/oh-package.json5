@@ -6,7 +6,6 @@
   "author": "",
   "license": "",
   "dependencies": {
-
+    "@devzeng/xlog": "file:../xlog"
   }
 }
-

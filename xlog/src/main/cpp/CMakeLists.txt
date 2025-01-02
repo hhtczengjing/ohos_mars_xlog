@@ -24,7 +24,7 @@ set(LIBRARY_DIR ${ZSTD_SOURCE_DIR}/lib)
 include(GNUInstallDirs)
 add_subdirectory(${NAPI_MARS_PATH}/zstd/build/cmake/lib zstd)
 
-include(${NAPI_MARS_PATH}/comm/CMakeUtils.txt)
+include(${NAPI_MARS_PATH}/comm/utils.cmake)
 
 if(DEFINED PACKAGE_FIND_FILE)
     include(${PACKAGE_FIND_FILE})
@@ -39,7 +39,7 @@ link_directories(app baseevent xlog sdt stn comm boost zstd)
 
 # marsxlog
 set(SELF_LIB_NAME marsxlog)
-file(GLOB SELF_SRC_FILES ${NAPI_MARS_PATH}/libraries/mars_ohos_xlog_sdk/import.cc)
+file(GLOB SELF_SRC_FILES ${NAPI_MARS_PATH}/libraries/mars_ohos_xlog_sdk/napi/import.cc)
 add_library(${SELF_LIB_NAME} SHARED ${SELF_SRC_FILES})
 install(TARGETS ${SELF_LIB_NAME} LIBRARY DESTINATION ${SELF_LIBS_OUT} ARCHIVE DESTINATION ${SELF_LIBS_OUT})
 get_filename_component(EXPORT_XLOG_EXP_FILE ${NAPI_MARS_PATH}/libraries/mars_ohos_xlog_sdk/napi/export.exp ABSOLUTE)

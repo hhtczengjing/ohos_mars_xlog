@@ -17,7 +17,33 @@
 # -keep-property-name: specifies property names that you want to keep
 # -keep-global-name: specifies names that you want to keep in the global scope
 
--enable-property-obfuscation
--enable-toplevel-obfuscation
--enable-filename-obfuscation
--enable-export-obfuscation
+#-enable-property-obfuscation
+#-enable-toplevel-obfuscation
+#-enable-filename-obfuscation
+#-enable-export-obfuscation
+
+-keep-property-name
+appenderClose
+appenderFlush
+appenderOpen
+cacheDays
+cacheDir
+compressLevel
+compressMode
+files
+getLogLevel
+getXlogInstance
+level
+logDir
+logPaths
+logWrite2
+mode
+namePrefix
+newXlogInstance
+pubKey
+releaseXlogInstance
+setAppenderMode
+setConsoleLogOpen
+setLogLevel
+setMaxAliveTime
+setMaxFileSize

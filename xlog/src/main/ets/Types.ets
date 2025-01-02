@@ -1,0 +1,32 @@
+export enum LogMode {
+  Async = 0,
+  Sync = 1
+}
+
+export enum LogLevel {
+  LEVEL_ALL = 0,
+  LEVEL_VERBOSE = 0,
+  LEVEL_DEBUG = 1,
+  LEVEL_INFO = 2,
+  LEVEL_WARNING = 3,
+  LEVEL_ERROR = 4,
+  LEVEL_FATAL = 5,
+  LEVEL_NONE = 6
+}
+
+export enum CompressLevel {
+  ZSTD_COMPRESS_LEVEL1 = 1,
+  ZSTD_COMPRESS_LEVEL2 = 2,
+  ZSTD_COMPRESS_LEVEL3 = 3,
+  ZSTD_COMPRESS_LEVEL4 = 4,
+  ZSTD_COMPRESS_LEVEL5 = 5,
+  ZSTD_COMPRESS_LEVEL6 = 6,
+  ZSTD_COMPRESS_LEVEL7 = 7,
+  ZSTD_COMPRESS_LEVEL8 = 8,
+  ZSTD_COMPRESS_LEVEL9 = 9
+}
+
+export enum CompressMode {
+  ZLIB = 0,
+  ZSTD = 1
+}
