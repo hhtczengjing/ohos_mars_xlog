@@ -2,6 +2,14 @@
 
 mars xlog for HarmonyOS
 
+## 安装
+
+```shell
+ohpm i @devzeng/xlog
+```
+
+OpenHarmony ohpm 环境配置等更多内容，请参考[如何安装 OpenHarmony ohpm 包](https://ohpm.openharmony.cn/#/cn/help/downloadandinstall)
+
 ## 使用
 
 1、初始化
