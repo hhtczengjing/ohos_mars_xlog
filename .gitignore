@@ -144,3 +144,4 @@ local.properties
 .clangd
 .clang-tidy
 .clang-format
+xlog/src/main/cpp/mars

@@ -49,21 +49,21 @@ export class XLog {
   }
 
   /**
-   * 关闭日志实例(含日志子实例)
+   * 关闭日志实例
    */
   static closeLog(): void {
     LoggerManager.appenderClose();
   }
 
   /**
-   * 获取日志等级(仅日志主实例)
+   * 获取日志等级
    */
   static getLogLevel(): LogLevel {
     return LoggerManager.getLogLevel();
   }
 
   /**
-   * 设置日志等级(含日志子实例)
+   * 设置日志等级
    *
    * @param level 日志等级
    */

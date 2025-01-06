@@ -1,7 +1,7 @@
 import { LogLevel, LogMode } from "./Types";
 
 export class XLogBuilder {
-  private static readonly DEFAULT_NAME_PREFIX = 'SFIMLog';
+  private static readonly DEFAULT_NAME_PREFIX = 'XLog';
   private static readonly DEFAULT_FILE_SIZE: number = 50 * 1024 * 1024;
   private static readonly DEFAULT_ALIVE_TIME: number = 7 * 24 * 60 * 60;
 
@@ -29,9 +29,6 @@ export class XLogBuilder {
   // 设置日志文件的保存时间，单位秒，默认7天
   public maxAliveTime: number;
 
-  // 所有子实例日志输出路径，可选
-  public subLogDirs: Array<string> | null;
-
   constructor() {
     this.logLevel = LogLevel.LEVEL_ALL;
     this.mode = LogMode.Async;
@@ -41,6 +38,5 @@ export class XLogBuilder {
     this.pubKey = "";
     this.maxFileSize = XLogBuilder.DEFAULT_FILE_SIZE;
     this.maxAliveTime = XLogBuilder.DEFAULT_ALIVE_TIME;
-    this.subLogDirs = null;
   }
 }

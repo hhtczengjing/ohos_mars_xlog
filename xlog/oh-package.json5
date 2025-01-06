@@ -1,6 +1,6 @@
 {
   "name": "@devzeng/xlog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tencent mars xlog for HarmonyOS",
   "keywords": [ "xlog", "mars", "log" ],
   "main": "Index.ets",
