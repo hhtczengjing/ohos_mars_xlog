@@ -14,10 +14,16 @@ DEVECO_HVIGOR="${DEVECO_TOOLS_HOME}/hvigor/bin"
 DEVECO_NODE="${DEVECO_TOOLS_HOME}/node/bin"
 export PATH="${DEVECO_OHPM}:${DEVECO_HVIGOR}:${DEVECO_NODE}:$PATH"
 
+rm -rf $PROJECT_PATH/xlog/.cxx
+rm -rf $PROJECT_PATH/xlog/oh_modules
+rm -rf $PROJECT_PATH/xlog/build
+
 ohpm config set registry https://ohpm.openharmony.cn/ohpm/
 ohpm config set strict_ssl false
 ohpm clean
 ohpm install --registry https://ohpm.openharmony.cn/ohpm/ --strict_ssl false --all
+
+hvigorw -p product=default clean --no-daemon
 
 hvigorw --mode module \
   -p product=default \

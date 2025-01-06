@@ -6,26 +6,26 @@ import { XLogClient } from "./client/impl/XLogClient";
 
 export class XLog {
   private static initialed: boolean = false;
-  private static readonly TAG: string = 'Logger';
+  private static readonly TAG: string = 'XLog';
 
   public static init(builder: XLogBuilder): void {
     if (XLog.initialed) {
-      LoggerManager.getLogger().printWarn(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "[Logger Init] XLog has already initted!");
+      LoggerManager.getLogger().printWarn(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "XLog has already initted!");
       return;
     }
 
     if (!builder) {
-      LoggerManager.getLogger().printError(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "[Logger Init] Failed to init XLog, builder is null or undefined.");
+      LoggerManager.getLogger().printError(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "Failed to init XLog, builder is null or undefined.");
       return;
     }
 
     if (builder.logLevel < LogLevel.LEVEL_ALL || builder.logLevel > LogLevel.LEVEL_NONE) {
-      LoggerManager.getLogger().printError(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "[Logger Init] Failed to init XLog, log level is invalid.");
+      LoggerManager.getLogger().printError(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "Failed to init XLog, log level is invalid.");
       return;
     }
 
     if (builder.mode != LogMode.Async && builder.mode != LogMode.Sync) {
-      LoggerManager.getLogger().printError(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "[Logger Init] Failed to init XLog, log mode is invalid.");
+      LoggerManager.getLogger().printError(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "Failed to init XLog, log mode is invalid.");
       return;
     }
 
@@ -38,7 +38,7 @@ export class XLog {
     LoggerManager.setMaxAliveTime(builder.maxAliveTime);
     LoggerManager.setLogDir(builder.logDir);
     XLog.initialed = true;
-    LoggerManager.getLogger().printInfo(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "[Logger Init] Init XLog success!");
+    LoggerManager.getLogger().printInfo(0, XLog.TAG, "", "", 0, process.pid, process.tid, process.pid, "Init XLog success!");
   }
 
   /**
